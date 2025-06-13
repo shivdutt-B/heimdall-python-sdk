@@ -2,8 +2,8 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/heimdall-python-sdk.svg)](https://pypi.org/project/heimdall-python-sdk/)
 [![license](https://img.shields.io/pypi/l/heimdall-python-sdk)](./LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/yourusername/heimdall-python-sdk)](https://github.com/yourusername/heimdall-python-sdk/issues)
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/heimdall-python-sdk)](https://github.com/yourusername/heimdall-python-sdk)
+[![GitHub issues](https://img.shields.io/github/issues/shivdutt-B/heimdall-python-sdk)](https://github.com/shivdutt-B/heimdall-python-sdk/issues)
+[![GitHub stars](https://img.shields.io/github/stars/shivdutt-B/heimdall-python-sdk)](https://github.com/shivdutt-B/heimdall-python-sdk)
 
 > Keep your backend servers **warm and monitored** with a single line of code.
 
