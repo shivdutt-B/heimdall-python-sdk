@@ -13,16 +13,4 @@ def ping_view(request):
     return response
 
 def register_ping():
-    # Just expose the view, user must manually include it in urlpatterns
     return ping_view
-
-'''
-@Example usage:
-from django.urls import path
-from heimdall_python_sdk import register_ping
-
-urlpatterns = [
-    path("__ping__/", register_ping(framework="django")),
-]
-
-'''

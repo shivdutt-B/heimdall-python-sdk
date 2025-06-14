@@ -9,14 +9,3 @@ def register_ping(app, route="/__ping__"):
         response.headers['Access-Control-Allow-Methods'] = 'GET, OPTIONS'
         response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
         return response
-
-'''
-@Example usage:
-from flask import Flask
-from heimdall_python_sdk import register_ping
-
-app = Flask(__name__)
-register_ping(app)  # Auto-detects Flask
-app.run()
-
-'''

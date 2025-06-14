@@ -15,14 +15,3 @@ def register_ping(app, route="/__ping__"):
         })
 
     app.include_router(router)
-
-
-'''
-@Example usage:
-from fastapi import FastAPI
-from heimdall_python_sdk import register_ping
-
-app = FastAPI()
-register_ping(app)  # Auto-detects FastAPI
-
-'''

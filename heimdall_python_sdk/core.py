@@ -13,3 +13,6 @@ def get_memory_payload():
             "heapUsed": round(mem.vms / 1024 / 1024, 2)
         }
     }
+
+# Used across all frameworks
+heimdall_ping_point = "__ping__/"

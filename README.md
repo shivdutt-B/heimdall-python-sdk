@@ -1,4 +1,9 @@
-# 🛡️ heimdall-python-sdk
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/shivdutt-B/heimdall/refs/heads/main/readme.assets/heimdall-logo-transparent.png" width="50" height="50" alt="Heimdall Logo"></td>
+    <td><h3>Heimdall</h3></td>
+  </tr>
+</table>
 
 [![PyPI version](https://img.shields.io/pypi/v/heimdall-python-sdk.svg)](https://pypi.org/project/heimdall-python-sdk/)
 [![license](https://img.shields.io/pypi/l/heimdall-python-sdk)](./LICENSE)
@@ -35,14 +40,14 @@ pip install heimdall-python-sdk
 
 ### Django
 
-Add the health check endpoint to your Django URL configuration:
+Add the health check endpoint to your Django ```URL(file: urls.py)``` configuration:
 
 ```python
 from django.urls import path
-from heimdall_python_sdk import register_ping
+from heimdall_python_sdk import register_ping, heimdall_ping_point
 
 urlpatterns = [
-    path("__ping__/", register_ping(framework="django")),
+    path(heimdall_ping_point, register_ping(framework="django")),
     # your other URL patterns...
 ]
 ```
@@ -54,11 +59,14 @@ Register the health check with your FastAPI application:
 ```python
 from fastapi import FastAPI
 from heimdall_python_sdk import register_ping
+import uvicorn
 
 app = FastAPI()
-register_ping(app)  # Auto-detects FastAPI
+register_ping(app)
 
-# Your FastAPI routes and logic here...
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8000)
+
 ```
 
 ### Flask
@@ -66,16 +74,15 @@ register_ping(app)  # Auto-detects FastAPI
 Register the health check with your Flask application:
 
 ```python
-from flask import Flask
 from heimdall_python_sdk import register_ping
+from flask import Flask
 
 app = Flask(__name__)
-register_ping(app)  # Auto-detects Flask
-
-# Your Flask routes and logic here...
+register_ping(app)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5000, debug=True)
+
 ```
 
 ---

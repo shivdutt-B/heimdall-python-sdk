@@ -1,4 +1,5 @@
 import sys
+from .core import heimdall_ping_point
 
 def register_ping(app=None, framework=None, route="/__ping__"):
     if framework is None:
@@ -10,7 +11,9 @@ def register_ping(app=None, framework=None, route="/__ping__"):
         elif "django" in sys.modules:
             framework = "django"
         else:
-            raise ImportError("No supported web framework detected (Flask, FastAPI, Django)")
+            raise ImportError(
+                "No supported web framework detected (Flask, FastAPI, Django)"
+            )
 
     if framework == "flask":
         from .flask_impl import register_ping as flask_ping
@@ -23,3 +26,5 @@ def register_ping(app=None, framework=None, route="/__ping__"):
         return django_ping()
     else:
         raise ValueError(f"Unsupported framework: {framework}")
+
+__all__ = ["register_ping", "heimdall_ping_point"]
